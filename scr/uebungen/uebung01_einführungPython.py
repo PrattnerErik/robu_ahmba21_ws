@@ -11,7 +11,7 @@ import math #importiert ganze lib
 from math import pi # importiert zahl pi
 from math import pi as M_pi # importier pi als M_pi
 
-import matplotlib.pyplot as pit
+import matplotlib.pyplot as plt
 
 # dynamische typisierung:
 # variable kann verschiedene Datentypen haben
@@ -94,7 +94,7 @@ print(f" a = {a}, b = {b}, c = {c}")
 
 
 
-#Datentyp Tuples - imutyble
+#Datentyp Tuples - imutable
 #==========================
 
 #wie liste die nicht verändert werden kann -> keine elemente wegnehmen oder dazugen oder ähnliches
@@ -131,3 +131,26 @@ person = {"vorname":"erik", "nachname":"prattner", "größe":1.82, "Klasse":"ahm
 print(f"{person['vorname']} {person['nachname']} ist in der klasse {person['Klasse']}")
 print(f"alle keys aus person: {person.keys}")
 
+#SCHLEIFEN
+#=========
+
+#für y = x²
+y = []
+range_display = 100000
+
+for x in range(range_display):
+    #y.append(x**2)
+    y += [x**2]
+
+#y =[x**2 for x in range(5)]
+
+plt.plot(range(range_display),y)
+plt.ylabel("Y-Achse")
+plt.xlabel("X-Achse")
+plt.show()
+
+y = []
+x = 0
+while x < S5:
+    y += [x**2]
+    x += 1
