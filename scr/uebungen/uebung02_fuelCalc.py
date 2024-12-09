@@ -18,7 +18,7 @@ class FuelCalculator:
         return self._avrConsumption
     
     def __str__(self):
-        return "heheheha"
+        return f"heheheha"
 
 class FuelUI:
     def __init__(self):
@@ -44,4 +44,7 @@ class FuelUI:
         print("Durchscnittsverbrauch pro 100km: %4.2f" % self._fuelcalc.getAvrConsumption())
         print(self._fuelcalc)
 
-FuelUI()
+if __name__ == "__main__":
+    FuelUI()
+    #abfrage ob das programm als hauptprogrmm gestartet wurde
+    #wird das rpogramm importiert wird das testprogramm nicht gestartet
