@@ -151,6 +151,6 @@ plt.show()
 
 y = []
 x = 0
-while x < S5:
+while x < 5:
     y += [x**2]
     x += 1
