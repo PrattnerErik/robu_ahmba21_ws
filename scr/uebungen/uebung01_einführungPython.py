@@ -59,7 +59,7 @@ myList = [1,2,3.1,"vier",[5.1,5.2,5.3],6,7j]
 print(f"Element 0: {myList[0]}") #gibt das erste element aus
 print(f"letze Element: {myList[-1]}")
 print(f"erste Element aus 5. Element: {myList[4][0]}")
-print(f"1.-3. Element: {myList[0:2+1]}") #gibt alle elemente von 1 bis ausschließlich 3+1 aus
+print(f"1.-3. Element: {myList[0:2+1]}") #gibt alle elemente von 0 bis ausschließlich 2+1 aus
 
 print("")
 print(f"von 3.Element bist schluss: {myList[2:]}")

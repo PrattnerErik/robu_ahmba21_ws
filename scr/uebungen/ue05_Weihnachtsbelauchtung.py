@@ -23,11 +23,14 @@ strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT,
 
 strip.begin()
 
+j = 0
+
 colors = [Color(255,0,0),Color(255,255,0),Color(0,255,0)]
 
 while True:
     for i in range(LED_COUNT):#erzeugt werte 0,1,2, für i wenn LED_COUNT == 3
-        strip.setPixelColor(0,colors[i])#stellt farbe an led ein
-        strip.setPixelColor(1,colors[i])
-        strip.setPixelColor(2,colors[i])
+        strip.setPixelColor(i,colors[(i+j)%LED_COUNT])#stellt farbe an led ein
     strip.show()
+    j+=1
+    j %= LED_COUNT
+
