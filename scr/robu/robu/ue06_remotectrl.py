@@ -1,23 +1,22 @@
-#Exercise Title:    Remote Control for the TurtleBot3 Burger
+#Exercise Title:    Remote Control for Burrgr
 #Group:             ?
 #Class:             ahmba21
 #Date:              ?
 
-import rclpy
-import os
-import select
-import sys
-import time
+import rclpy        # importiert ros2 framework
+import os           # Betriebssystemspezifische Funktionen
+import select       # zwischen mehrere Threads lesen
+import sys          # Systembibliothek
+import time         # time time time time time zb. time.sellp(1.0) -> 1 sek schlafen
 
 
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Twist # Datentyp von ros2
+from rclpy.qos import QoSProfile # Datentyp von ros2
+from sensor_msgs.msg import LaserScan, Image
 from rclpy.qos import QoSProfile
 
-if os.name == 'nt':
-    import msvcrt
-else:
-    import termios
-    import tty
+import termios
+import tty
 
 msg = """
 Excercise:  ?
@@ -53,7 +52,6 @@ def get_key():
     finally:
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
 
-
 def main():
     
     rclpy.init()
@@ -73,6 +71,10 @@ def main():
                 for c in key:
                     str += " %d" % (ord(c))
                 print(str)
+                
+                if key == '\x03':
+                    print("jojojoooooo tutell")
+                    break
 
 
 
