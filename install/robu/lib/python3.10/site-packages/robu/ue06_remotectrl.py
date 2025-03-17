@@ -90,14 +90,14 @@ def main():
                     
                     print(f"Geschw <: {vel.linear.x}")
 
-                if key == '\x1B[D':
+                if key == '\x1B[C':
                     vel.angular.z += ANG_VEL_STEP_SIZE
                     if vel.angular.z > MAX_ANG_VEL:
                         vel.angular.z = MAX_ANG_VEL
                         
                     print(f"Ang >: {vel.angular.z}")
                     
-                if key == '\x1B[C':
+                if key == '\x1B[D':
                     vel.angular.z -= ANG_VEL_STEP_SIZE
                     if vel.angular.z < -MAX_ANG_VEL:
                         vel.angular.z = -MAX_ANG_VEL
