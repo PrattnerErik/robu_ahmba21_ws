@@ -59,7 +59,7 @@ def main():
     qos = QoSProfile(depth=10)
     
     node = rclpy.create_node('remotectrl')
-    pub = node.create_publisher(Twist, 'turtle1/cmd_vel', qos)
+    pub = node.create_publisher(Twist, '/cmd_vel', qos)
 
     vel = Twist()
 
@@ -81,28 +81,28 @@ def main():
                     if vel.linear.x > MAX_LIN_VEL:
                         vel.linear.x = MAX_LIN_VEL
                     
-                    print(f"Geschw >: {vel.linear.x}")
+                    print(f"Geschw >: %.3f", vel.linear.x)
                 
                 if key == '\x1B[B':
                     vel.linear.x -= LIN_VEL_STEP_SIZE
                     if vel.linear.x < -MAX_LIN_VEL:
                         vel.linear.x = -MAX_LIN_VEL
                     
-                    print(f"Geschw <: {vel.linear.x}")
+                    print(f"Geschw <: %.3f", vel.linear.x)
 
-                if key == '\x1B[C':
+                if key == '\x1B[D':
                     vel.angular.z += ANG_VEL_STEP_SIZE
                     if vel.angular.z > MAX_ANG_VEL:
                         vel.angular.z = MAX_ANG_VEL
                         
-                    print(f"Ang >: {vel.angular.z}")
+                    print(f"Ang >: %.3f", vel.angular.z)
                     
-                if key == '\x1B[D':
+                if key == '\x1B[C':
                     vel.angular.z -= ANG_VEL_STEP_SIZE
                     if vel.angular.z < -MAX_ANG_VEL:
                         vel.angular.z = -MAX_ANG_VEL
                     
-                    print(f"Ang <: {vel.angular.z}")
+                    print(f"Ang <: %.3f", vel.angular.z)
                 
                 if key == '\x1B':
                     vel.angular.z = 0.0
