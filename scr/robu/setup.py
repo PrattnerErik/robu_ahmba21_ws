@@ -20,7 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'remotectrl=robu.ue06_remotectrl:main'
+            'remotectrl=robu.ue06_remotectrl:main',
+            'distance_pub = robu.ue07_distance: main_distance_pub',
+            'distance_sub = robu.ue07_distance: main_distance_sub'
         ],
     },
 )
