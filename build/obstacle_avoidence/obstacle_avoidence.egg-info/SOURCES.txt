@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+obstacle_avoidence/__init__.py
+obstacle_avoidence/obstacle_avoidence_node.py
+obstacle_avoidence.egg-info/PKG-INFO
+obstacle_avoidence.egg-info/SOURCES.txt
+obstacle_avoidence.egg-info/dependency_links.txt
+obstacle_avoidence.egg-info/entry_points.txt
+obstacle_avoidence.egg-info/requires.txt
+obstacle_avoidence.egg-info/top_level.txt
+obstacle_avoidence.egg-info/zip-safe
+resource/obstacle_avoidence

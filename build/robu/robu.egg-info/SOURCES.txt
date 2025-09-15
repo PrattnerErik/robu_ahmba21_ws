@@ -11,6 +11,11 @@ setup.py
 resource/robu
 robu/__init__.py
 robu/ue06_remotectrl.py
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py
+robu/ue07_distance.py
+robu.egg-info/PKG-INFO
+robu.egg-info/SOURCES.txt
+robu.egg-info/dependency_links.txt
+robu.egg-info/entry_points.txt
+robu.egg-info/requires.txt
+robu.egg-info/top_level.txt
+robu.egg-info/zip-safe

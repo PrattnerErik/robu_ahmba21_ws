@@ -1,0 +1,6 @@
+source;share/obstacle_avoidence/hook/pythonpath.ps1
+source;share/obstacle_avoidence/hook/pythonpath.dsv
+source;share/obstacle_avoidence/hook/pythonpath.sh
+source;../../build/obstacle_avoidence/share/obstacle_avoidence/hook/pythonpath_develop.ps1
+source;../../build/obstacle_avoidence/share/obstacle_avoidence/hook/pythonpath_develop.dsv
+source;../../build/obstacle_avoidence/share/obstacle_avoidence/hook/pythonpath_develop.sh

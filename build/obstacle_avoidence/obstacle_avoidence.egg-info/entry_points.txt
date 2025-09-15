@@ -1,0 +1,2 @@
+[console_scripts]
+emergency_stop = obstacle_avoidence.obstalce_avoidence_node:main
