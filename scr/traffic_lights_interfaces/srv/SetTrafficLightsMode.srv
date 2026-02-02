@@ -1,0 +1,4 @@
+int8 mode   #modus der Ampel -> siehe TrafficLightsMode
+---
+bool success
+string msg  #für fehlermessage oder einfach "olles kloa moch weita"
