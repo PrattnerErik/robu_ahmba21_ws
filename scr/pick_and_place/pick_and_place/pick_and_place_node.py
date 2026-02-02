@@ -2,12 +2,17 @@ from rclpy.node import Node
 import rclpy
 from std_msgs.msg import Bool
 from std_srvs.srv import SetBool
+from geometry_msgs.msg import Pose
 
 from pick_and_place.state_machine import State, StateMachine
 from pick_and_place.states.initialize_state import Initialize
 from pick_and_place.states.home_state import Home
 from pick_and_place.states.wait_for_object_state import WaitForObject
 from pick_and_place.states.conveyor_belt_start_state import ConveryorBeltStart
+from pick_and_place.states.conveyor_belt_stop_state import ConveryorBeltStop
+from pick_and_place.states.objekt_detection_state import ObjectDetection
+from pick_and_place.states.move_to_object_state import MoveToObject
+
 
 class PickAndPlace(Node):
     def __init__(self, node_name: str):
@@ -16,9 +21,9 @@ class PickAndPlace(Node):
         #1.) Schnittstelle zur Statemashine
         self.light_barrier_detected = False
         self.vacuum_ok = False
-        self.objekt_pose = None
-        self.objekt_color = None
-        self.objekt_type = None
+        self.objekt_pose:Pose|None = None
+        self.objekt_color:str|None = None
+        self.objekt_type:str|None = None
         #...
 
         #2.) ROS
@@ -43,6 +48,9 @@ class PickAndPlace(Node):
         self._sm.add_state(Home())
         self._sm.add_state(WaitForObject())
         self._sm.add_state(ConveryorBeltStart())
+        self._sm.add_state(ConveryorBeltStop())
+        self._sm.add_state(ObjectDetection())
+        self._sm.add_state(MoveToObject())
         # TODO: more states...
         self._sm.set_initial_state("INITIALIZE")
 
